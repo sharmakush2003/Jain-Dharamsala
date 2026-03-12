@@ -138,6 +138,15 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       sewa_bhojanshala: 'Bhojanshala (Full Meal)',
       sewa_pooja: 'Special Pooja',
       booking_confirm_msg: 'Booking request submitted successfully!',
+      cal_dharmic_title: 'Dharmic Calendar',
+      cal_dharmic_subtitle: 'Sacred Tithis & Bhojanshala Timings',
+      cal_ashtami: 'Ashtami',
+      cal_chaturdashi: 'Chaturdashi',
+      cal_kalyanak: 'Tirthankar Kalyanaks',
+      cal_timing_bhojan: 'Bhojanshala: 10:00 AM - 1:00 PM',
+      cal_timing_navkarsi: 'Navkarsi: 8:00 AM - 9:30 AM',
+      cal_timing_special: 'Special Rasoi',
+      cal_view_details: 'View Sacred Details',
     },
     hi: {
       nav_home: 'होम',
@@ -261,7 +270,16 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       sewa_bhojanshala: 'भोजनशाला (पूर्ण भोजन)',
       sewa_pooja: 'विशेष पूजा',
       booking_confirm_msg: 'बुकिंग अनुरोध सफलतापूर्वक सबमिट किया गया!',
-    }
+      cal_dharmic_title: 'धार्मिक कैलेंडर',
+      cal_dharmic_subtitle: 'पवित्र तिथियां और भोजनशाला का समय',
+      cal_ashtami: 'अष्टमी',
+      cal_chaturdashi: 'चतुर्दशी',
+      cal_kalyanak: 'तीर्थंकर कल्याणक',
+      cal_timing_bhojan: 'भोजनशाला: प्रातः 10:00 - दोपहर 1:00',
+      cal_timing_navkarsi: 'नवकारसी: प्रातः 8:00 - 9:30',
+      cal_timing_special: 'विशेष रसोई',
+      cal_view_details: 'पवित्र विवरण देखें',
+    },
   };
 
   const t = (key: string) => {

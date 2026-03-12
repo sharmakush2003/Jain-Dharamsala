@@ -3,6 +3,7 @@
 import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import Timeline from '@/components/Timeline';
+import DharmicCalendar from '@/components/DharmicCalendar';
 import styles from './page.module.css';
 
 const TemplePage = () => {
@@ -63,6 +64,13 @@ const TemplePage = () => {
               <Timeline />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Digitized Dharmic Calendar */}
+      <section className={styles.centeredSection}>
+        <div className={styles.container}>
+          <DharmicCalendar />
         </div>
       </section>
 
