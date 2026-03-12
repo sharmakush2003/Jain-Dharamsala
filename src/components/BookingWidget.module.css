@@ -34,8 +34,8 @@
   letter-spacing: 1px !important;
 }
 
-.inputGroup input,
-.inputGroup select {
+.forcedInputGroup input,
+.forcedInputGroup select {
   border: none;
   background: transparent !important;
   font-size: 0.95rem;
