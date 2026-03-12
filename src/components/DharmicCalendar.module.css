@@ -92,6 +92,9 @@
   border: 1px solid #f3f4f6;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dayCell:hover {
@@ -286,21 +289,30 @@
   .dayCell {
     min-height: 50px;
     padding: 4px;
+    justify-content: center;
   }
 
   .tithiTag {
-    display: none; /* Hide text tags on very small screens to prevent overlap */
+    display: none !important;
   }
 
-  .dayCell::after {
+  /* Dots for small mobiles */
+  .ashtamiCell::after,
+  .chaturdashiCell::after,
+  .kalyanakCell::after {
     content: '';
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    margin: 4px auto 0;
+    margin-top: 4px;
   }
 
-  .ashtami::after { background: #fde047; }
-  .chaturdashi::after { background: #fecaca; }
+  .ashtamiCell::after { background: #eab308; } /* Bright Yellow */
+  .chaturdashiCell::after { background: #ef4444; } /* Bright Red */
+  .kalyanakCell::after { background: #f97316; } /* Orange */
+
+  .kalyanakDot {
+    display: none !important;
+  }
 }

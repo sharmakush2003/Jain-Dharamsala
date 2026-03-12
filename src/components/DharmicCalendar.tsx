@@ -50,7 +50,7 @@ const DharmicCalendar = () => {
       days.push(
         <div 
           key={i} 
-          className={`${styles.dayCell} ${selectedDay === i ? styles.selected : ''}`}
+          className={`${styles.dayCell} ${selectedDay === i ? styles.selected : ''} ${sacredInfo ? styles[sacredInfo.type + 'Cell'] : ''}`}
           onClick={() => handleDayClick(i)}
         >
           <span className={styles.dayNum}>{i}</span>
