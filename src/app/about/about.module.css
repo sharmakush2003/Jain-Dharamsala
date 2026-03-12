@@ -1,0 +1,130 @@
+.page {
+  background-color: var(--sacred-white);
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: -50px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.contactCard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-deep);
+  margin-bottom: 60px;
+  border-top: 5px solid var(--divine-gold);
+}
+
+.contactCard p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.note {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--temple-maroon);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--temple-maroon);
+  font-size: 2.2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.badge {
+  background: var(--temple-marble);
+  color: var(--saffron-kesariya);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.historySection {
+  margin-bottom: 100px;
+}
+
+.bhojanshalaSection {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  margin-bottom: 60px;
+}
+
+.bhojanText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backHome {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.backHome a {
+  background: var(--temple-maroon);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  transition: var(--transition-sacred);
+}
+
+.backHome a:hover {
+  background: var(--saffron-kesariya);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(128, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    margin-top: -30px;
+  }
+}

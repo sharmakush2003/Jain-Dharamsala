@@ -1,0 +1,337 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-alt); /* Light parchment #F8F9FA */
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.1) 70%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+
+.ornament {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Facts Grid */
+.factsSection {
+  background-color: var(--bg-alt);
+  padding: 0 20px;
+  position: relative;
+  z-index: 30;
+}
+
+.factsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: -120px;
+}
+
+.factCard {
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.factCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--divine-gold);
+}
+
+.factIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.factCard h3 {
+  font-size: 1.6rem;
+  color: var(--temple-maroon);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.factCard p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+/* History Narrative */
+.historySection {
+  background-color: #f5f0e1;
+}
+
+.narrativeWrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 100px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--temple-maroon);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+}
+
+.premiumTitle {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-main);
+  font-family: 'Playfair Display', serif;
+}
+
+.richText p {
+  font-size: 1.25rem;
+  line-height: 2;
+  color: var(--text-soft);
+  margin-bottom: 2.5rem;
+}
+
+.dropcap {
+  float: left;
+  font-size: 5.5rem;
+  line-height: 0.8;
+  padding: 8px 12px 0 0;
+  color: var(--temple-maroon);
+  font-family: 'Playfair Display', serif;
+}
+
+.timelineContainer {
+  background: white;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+/* Shared Layout for Architecture & Legend */
+.centeredBox {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.archSection {
+  padding: 120px 0;
+  background-color: #fdfaf3;
+}
+
+.archContentCentered {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.luxuryBoxCentered {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.archTitle {
+  font-size: 3.5rem;
+  color: var(--temple-maroon);
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.boxDivider {
+  width: 80px;
+  height: 4px;
+  background: var(--divine-gold);
+  margin: 0 auto 2.5rem;
+}
+
+.luxuryBoxCentered p {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: var(--text-soft);
+}
+
+.archImageFull {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+}
+
+.widePhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.archImageFull:hover .widePhoto {
+  transform: scale(1.03);
+}
+
+/* Legend Section Area */
+.legendSection {
+  background-color: var(--bg-alt);
+  padding: 150px 0;
+}
+
+.legendTitle {
+  font-size: 3.5rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.quoteMark {
+  font-size: 6rem;
+  color: var(--divine-gold);
+  line-height: 1;
+  opacity: 0.2;
+  display: block;
+}
+
+.legendBodyCentered {
+  font-size: 1.8rem;
+  line-height: 2.1;
+  color: var(--text-soft);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+/* Restoration */
+.restorationSection {
+  text-align: center;
+  padding: 150px 20px;
+  background: white;
+}
+
+.restorationBox {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.restorationOrnament {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.restorationBox h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.restorationBox p {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: var(--text-soft);
+}
+
+.finalDivider {
+  width: 120px;
+  height: 2px;
+  background: var(--divine-gold);
+  margin: 50px auto;
+}
+
+.guardianText {
+  font-size: 1rem;
+  color: var(--text-soft) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 1100px) {
+  .narrativeWrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 75vh;
+  }
+
+  .container {
+    padding: 60px 20px;
+  }
+
+  .factsGrid {
+    margin-top: -60px;
+  }
+
+  .premiumTitle, .archTitle, .legendTitle, .restorationBox h2 {
+    font-size: 2.8rem;
+  }
+
+  .richText p, .luxuryBoxCentered p, .legendBodyCentered, .restorationBox p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .dropcap {
+    font-size: 4.5rem;
+  }
+
+  .archImageFull {
+    height: 350px;
+  }
+
+  .archSection, .legendSection, .restorationSection {
+    padding: 100px 0;
+  }
+}

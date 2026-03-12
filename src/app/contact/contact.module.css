@@ -1,0 +1,187 @@
+.page {
+  background-color: #f7f2ea;
+  background-image: url("https://www.transparenttextures.com/patterns/marble-white.png");
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: -60px auto 100px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.warningBox {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-left: 5px solid #e53e3e;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.warningIcon {
+  font-size: 2rem;
+}
+
+.warningContent h3 {
+  color: #c53030;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.warningContent p {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.infoBox {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  border-top: 4px solid var(--divine-gold);
+}
+
+.infoBox h3 {
+  color: var(--temple-maroon);
+  margin-bottom: 15px;
+}
+
+.contactCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contactCard {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--sacred-border);
+}
+
+.contactCard:hover {
+  transform: translateX(10px);
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  background: var(--temple-marble);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--temple-maroon);
+}
+
+.cardText h4 {
+  font-size: 0.9rem;
+  color: var(--saffron-kesariya);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.cardText a, .cardText p {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 500;
+  display: block;
+}
+
+.mapWrapper {
+  background: white;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.backHome {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.backHome a {
+  background: var(--temple-maroon);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  transition: var(--transition-sacred);
+}
+
+.backHome a:hover {
+  background: var(--saffron-kesariya);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(128, 0, 0, 0.2);
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .warningBox {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contactCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,265 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+  padding: 0 60px; /* Increased padding for edges */
+}
+
+.scrolled {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--sacred-glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid var(--sacred-border);
+}
+
+.container {
+  width: 100%; /* Spread to corners */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.scrolled .logoText {
+  color: var(--temple-maroon);
+  text-shadow: none;
+}
+
+.logoSubtext {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFD700; /* Brighter gold for better visibility on dark hero */
+  margin-top: 4px;
+}
+
+.scrolled .logoSubtext {
+  color: var(--accent-color); /* Original gold when on light background */
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.link {
+  color: white;
+  font-weight: 500;
+  transition: var(--transition-sacred);
+  position: relative;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.scrolled .link {
+  color: var(--text-soft);
+  text-shadow: none;
+}
+
+.link:hover {
+  color: var(--divine-gold);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--divine-gold);
+  transition: var(--transition-sacred);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.langBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--transition-sacred);
+}
+
+.scrolled .langBtn {
+  background: var(--temple-marble);
+  border-color: var(--sacred-border);
+  color: var(--temple-maroon);
+}
+
+.langBtn:hover {
+  background: var(--temple-maroon);
+  border-color: var(--temple-maroon);
+  color: white;
+}
+
+.bookBtn {
+  background: linear-gradient(135deg, var(--temple-maroon), var(--spiritual-orange));
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+  transition: var(--transition-sacred);
+}
+
+.bookBtn:hover {
+  background: #e68a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+.scrolled .hamburger span {
+  background-color: var(--temple-maroon);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 30px;
+  }
+  
+  .desktopActions {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--sacred-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .links.menuOpen {
+    right: 0;
+  }
+  
+  .link {
+    font-size: 1.5rem;
+    color: var(--temple-maroon) !important;
+    text-shadow: none !important;
+  }
+  
+  .mobileOnly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 40px;
+  }
+  
+  .mobileOnly .langBtn,
+  .mobileOnly .bookBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobileOnly .langBtn {
+    background: var(--temple-marble);
+    border-color: var(--sacred-border);
+    color: var(--temple-maroon);
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .links {
+    width: 100%;
+  }
+}
