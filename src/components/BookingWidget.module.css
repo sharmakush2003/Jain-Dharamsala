@@ -21,6 +21,8 @@
   display: flex;
   flex-direction: column;
   padding: 5px 20px;
+  align-items: center;
+  text-align: center;
 }
 
 .forcedLabel {
@@ -47,6 +49,8 @@
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
+  text-align: center;
+  text-align-last: center;
 }
 
 .divider {
