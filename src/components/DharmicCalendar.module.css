@@ -219,30 +219,88 @@
 }
 
 @media (max-width: 768px) {
+  .calendarHeader {
+    padding: 25px 20px;
+  }
+  
+  .calendarHeader h3 {
+    font-size: 1.6rem;
+  }
+
+  .navigation {
+    padding: 15px 20px;
+  }
+
+  .monthLabel {
+    font-size: 1.2rem;
+  }
+
   .grid {
     gap: 5px;
     padding: 10px;
   }
   
   .dayCell {
-    min-height: 70px;
-    padding: 8px;
+    min-height: 60px;
+    padding: 5px;
+  }
+
+  .dayNum {
+    font-size: 0.9rem;
   }
   
   .tithiTag {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     padding: 2px 4px;
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+
+  .kalyanakDot {
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
   }
   
   .timingGrid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
-  .calendarHeader {
-    padding: 25px;
+
+  .detailSection {
+    padding: 20px;
   }
-  
-  .calendarHeader h3 {
-    font-size: 1.6rem;
+
+  .detailHeader h4 {
+    font-size: 1.3rem;
   }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 2px;
+    padding: 5px;
+  }
+
+  .dayCell {
+    min-height: 50px;
+    padding: 4px;
+  }
+
+  .tithiTag {
+    display: none; /* Hide text tags on very small screens to prevent overlap */
+  }
+
+  .dayCell::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin: 4px auto 0;
+  }
+
+  .ashtami::after { background: #fde047; }
+  .chaturdashi::after { background: #fecaca; }
 }
