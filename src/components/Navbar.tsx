@@ -47,13 +47,28 @@ const Navbar = () => {
           <Link href="/home#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
           <Link href="/home#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
           {!isAdmin && (
-            <Link href="/" className={styles.link} onClick={() => setMenuOpen(false)}>Admin</Link>
+            <Link href="/" className={styles.link} onClick={() => setMenuOpen(false)}>Admin Login</Link>
           )}
           
           <div className={styles.mobileOnly}>
             <button className={styles.langBtn} onClick={toggleLanguage}>
               {language === 'en' ? 'हिन्दी' : 'English'}
             </button>
+            {isAdmin && (
+              <>
+                <Link href="/admin" className={styles.link} onClick={() => setMenuOpen(false)}>Dashboard</Link>
+                <button 
+                  className={styles.logoutBtn} 
+                  style={{ width: '100%', marginTop: '10px' }} 
+                  onClick={() => {
+                    setMenuOpen(false);
+                    logout();
+                  }}
+                >
+                  Logout
+                </button>
+              </>
+            )}
           </div>
         </div>
 
