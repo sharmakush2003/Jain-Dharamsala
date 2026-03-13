@@ -22,6 +22,8 @@ const TemplePage = () => {
                 muted 
                 loop 
                 playsInline 
+                poster="/images/temple/hero.png"
+                preload="auto"
                 className={styles.splitVideo}
               >
                 <source src="/temple-video.mp4" type="video/mp4" />
