@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
+import Navbar from '@/components/Navbar';
 import Timeline from '@/components/Timeline';
 import DharmicCalendar from '@/components/DharmicCalendar';
 import Footer from '@/components/Footer';
@@ -12,6 +13,7 @@ const TemplePage = () => {
 
   return (
     <main className={styles.main}>
+      <Navbar />
       {/* Top Section: Split Layout (Centered Container) */}
       <section className={styles.splitSection}>
         <div className={styles.container}>

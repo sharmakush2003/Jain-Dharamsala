@@ -52,6 +52,7 @@ const Navbar = () => {
         <div className={`${styles.links} ${menuOpen ? styles.menuOpen : ''}`}>
           <Link href="/home" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link>
           <Link href="/about" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link>
+          <Link href="/history" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_history')}</Link>
           <Link href="/temple" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_temple')}</Link>
           <Link href="/trust-committee" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_trust')}</Link>
           <Link href="/contact" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link>

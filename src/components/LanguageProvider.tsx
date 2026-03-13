@@ -19,6 +19,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     en: {
       nav_home: 'Home',
       nav_about: 'About',
+      nav_history: 'History',
       nav_rooms: 'Rooms',
       nav_amenities: 'Amenities',
       nav_location: 'Location',
@@ -180,10 +181,93 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       cal_timing_navkarsi: 'Navkarsi: 8:00 AM - 9:30 AM',
       cal_timing_special: 'Special Rasoi',
       cal_view_details: 'View Sacred Details',
+      
+      // History Page
+      history_title: 'History and Glorious Heritage',
+      history_subtitle: 'The Eternal Saga of Chittaurgarh',
+      history_quote: '"In history, the name Chittorgarh evokes glorious images of heroes like Maharana Pratap, Sanga, and Kumbha; the supreme devotee Meera Bai; the great philanthropist Bhamashah; the righteous Karmashah; and great scholars like Acharya Haribhadra. This is the holy land of Chitrakoot, where the splendor of Jain pride is preserved alongside power and devotion for centuries."',
+      history_intro: 'This holy land of Chittorgarh is a magnificent confluence of power, devotion, and Jain splendor, where centuries of history are inscribed on stone walls.',
+      
+      // Timeline
+      history_t1_year: '300 BCE',
+      history_t1_title: 'Rise of Madhyamika',
+      history_t1_desc: 'Arya Parivartan made Madhyamika (Nagari) his center during the reign of Ashoka\'s grandson, Samprati.',
+      
+      history_t2_year: '4th Century',
+      history_t2_title: 'Capital of Shrijanpad',
+      history_t2_desc: 'Madhyamika Nagari, the capital of Shrijanpad since the Mahabharata era, was at its peak.',
+      
+      history_t3_year: '947 CE',
+      history_t3_title: 'Arrival of Simandar Shah',
+      history_t3_desc: 'Simandar Shah started trade in Kerapurpattan and acquired immense wealth through fortune.',
+      
+      history_t4_year: '972 CE',
+      history_t4_title: 'Panch Tirth Consecration',
+      history_t4_desc: 'Grand consecration of five pilgrimages including Chittorgarh under Acharya Yashobhadra Suri.',
+      
+      history_t5_year: '1175 CE',
+      history_t5_title: 'Shantinath Temple',
+      history_t5_desc: 'Construction of the artistic Lord Shantinath temple near Ratneshwar Lake.',
+      
+      history_t6_year: '1448 CE',
+      history_t6_title: 'Bhandari Vella\'s Contribution',
+      history_t6_desc: 'Construction of the Northern Parshvanath Temple by Bhandari Shreshthi Vella.',
+      
+      history_t7_year: '1530 CE',
+      history_t7_title: 'Era of Karmashah Doshi',
+      history_t7_desc: 'Grand construction of the Southern Parshvanath Temple by Karmashah Doshi.',
+      
+      history_t8_year: '1973 CE',
+      history_t8_title: 'Haribhadrasuri Memorial',
+      history_t8_desc: 'Consecration of the memorial temple of Acharya Haribhadrasuri, author of 1444 texts.',
+      
+      // Categories
+      history_cat_fort: 'Fort Temples',
+      history_cat_city: 'City Shwetamber Temples',
+      history_cat_digambar: 'Digambar Jain Temples',
+      history_cat_monuments: 'Monuments',
+      
+      // Temple Details
+      history_fort_t1_name: '1. Shri Saat Bees Deori Temple Complex',
+      history_fort_t1_desc: 'Surrounded by 27 shrines, this magnificent temple complex witnesses the spiritual simplicity and rich ornamentation of Jain architecture.',
+      history_fort_t1_year: '972 CE (Consecration)',
+      history_fort_t2_name: '2. Northern Parshvanath Temple',
+      history_fort_t2_desc: 'Built by Bhandari Shreshthi Vella, this temple is famous for its fine craftsmanship and idols of great Acharyas.',
+      history_fort_t2_year: '1448 CE',
+      history_fort_t3_name: '3. Southern Parshvanath Temple',
+      history_fort_t3_desc: 'Built by Talashah and his son Karmashah Doshi, this temple symbolizes devotion and sacrifice.',
+      history_fort_t3_year: '1530 CE',
+      history_fort_t4_name: '4. Shantinath and Mahavir Swami Temples',
+      history_fort_t4_desc: 'Located near Ratneshwar Lake, these temples are known for their antiquity and serene atmosphere.',
+      history_fort_t4_year: '1175 - 1444 CE',
+      
+      history_city_t1_name: '4. Shri Rishabhdev Temple (Dhimo Temple)',
+      history_city_t1_desc: 'Located at the foot of the fort, this temple was built with devotion by the Shravaks of the "Dhig" gotra.',
+      history_city_t1_year: '400 Years Old',
+      history_city_t2_name: '5. Shri Haribhadrasuri Memorial Temple',
+      history_city_t2_desc: 'Built in the holy memory of the great philosopher Acharya Haribhadrasuri, this temple is a center of knowledge and detachment.',
+      history_city_t2_year: '1973 CE',
+      history_city_t3_name: '6. Chaumukha Parshvanath Temple',
+      history_city_t3_desc: 'Located near Gaumukh Kund, this temple is famous for its unique stone craft and Kannada inscriptions.',
+      history_city_t3_year: '1491 VS',
+      
+      history_digambar_t1_name: '9. Shri Mallinath Bhagwan Temple (Mahavir Prasad)',
+      history_digambar_t1_desc: 'Located near Kirti Stambh, this temple reflects the ancient glory of the Digambar tradition.',
+      history_digambar_t1_year: '1428 CE',
+      history_digambar_t2_name: '11. Shri Suparshvanath Digambar Jain Temple',
+      history_digambar_t2_desc: 'This beautiful temple of modern architecture is a major center for the religious activities of the Digambar Jain community.',
+      history_digambar_t2_year: '2005 CE',
+
+      history_mon_t1_name: '13. Kirti Stambh (Tower of Fame)',
+      history_mon_t1_desc: 'This 75-foot tall, seven-story tower dedicated to Lord Adinath is a world-famous example of Jain architecture.',
+      history_mon_t1_year: '11th - 12th Century',
+
+      history_footer_text: 'Magnificent examples of Jain architecture. This is a brief description of the main temples. There are many more historical Jain temples in Chittorgarh that represent our rich heritage.',
     },
     hi: {
       nav_home: 'होम',
       nav_about: 'हमारे बारे में',
+      nav_history: 'इतिहास',
       nav_rooms: 'कमरे',
       nav_amenities: 'सुविधाएं',
       nav_location: 'स्थान',
@@ -345,6 +429,88 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       cal_timing_navkarsi: 'नवकारसी: प्रातः 8:00 - 9:30',
       cal_timing_special: 'विशेष रसोई',
       cal_view_details: 'पवित्र विवरण देखें',
+
+      // History Page
+      history_title: 'इतिहास और गौरवशाली विरासत',
+      history_subtitle: 'चित्तौड़गढ़ की शाश्वत गाथा',
+      history_quote: '"इतिहास में, चित्तौड़गढ़ का नाम महाराणा प्रताप, सांगा और कुंभा जैसे नायकों; परम भक्त मीरा बाई; महान परोपकारी भामाशाह; धर्मी कर्मशाह; और आचार्य हरिभद्र जैसे महान विद्वानों की गौरवशाली यादें ताजा कर देता है। चित्तौड़गढ़ की यह पावन धरा शक्ति, भक्ति और जैन वैभव का एक शानदार संगम है, जहाँ सदियों का इतिहास पत्थर की दीवारों पर अंकित है।ें"',
+      history_intro: 'चित्तौड़गढ़ की यह पावन धरा शक्ति, भक्ति और जैन वैभव का एक शानदार संगम है, जहाँ सदियों का इतिहास पत्थर की दीवारों पर अंकित है।',
+
+      // Timeline
+      history_t1_year: '300 ई.पू.',
+      history_t1_title: 'माध्यमिका का उदय',
+      history_t1_desc: 'आर्य परिवर्तन ने सम्राट अशोक के पौत्र संप्रति के शासनकाल के दौरान माध्यमिका (नगरी) को अपना केंद्र बनाया।',
+
+      history_t2_year: '4वीं शताब्दी',
+      history_t2_title: 'श्रीजनपद की राजधानी',
+      history_t2_desc: 'महाभारत काल से श्रीजनपद की राजधानी रही माध्यमिका नगरी अपने शिखर पर थी।',
+
+      history_t3_year: '947 ईस्वी',
+      history_t3_title: 'सिमंदर शाह का आगमन',
+      history_t3_desc: 'सिमंदर शाह ने केरापुरपत्तन में व्यापार शुरू किया और भाग्य के माध्यम से अपार धन अर्जित किया।',
+
+      history_t4_year: '972 ईस्वी',
+      history_t4_title: 'पंच तीर्थ प्रतिष्ठा',
+      history_t4_desc: 'आचार्य यशोभद्र सूरी के सानिध्य में चित्तौड़गढ़ सहित पांच तीर्थों की भव्य प्रतिष्ठा हुई।',
+
+      history_t5_year: '1175 ईस्वी',
+      history_t5_title: 'शांतिनाथ मंदिर',
+      history_t5_desc: 'रत्नेश्वर झील के पास कलात्मक भगवान शांतिनाथ मंदिर का निर्माण।',
+
+      history_t6_year: '1448 ईस्वी',
+      history_t6_title: 'भंडारी वेल्ला का योगदान',
+      history_t6_desc: 'भंडारी श्रेष्ठी वेल्ला द्वारा उत्तरी पार्श्वनाथ मंदिर का निर्माण।',
+
+      history_t7_year: '1530 ईस्वी',
+      history_t7_title: 'कर्मशाह दोशी का युग',
+      history_t7_desc: 'कर्मशाह दोशी द्वारा दक्षिणी पार्श्वनाथ मंदिर का भव्य निर्माण।',
+
+      history_t8_year: '1973 ईस्वी',
+      history_t8_title: 'हरिभद्रसूरी स्मारक',
+      history_t8_desc: '1444 ग्रंथों के रचयिता आचार्य हरिभद्रसूरी के स्मारक मंदिर की प्रतिष्ठा।',
+
+      // Categories
+      history_cat_fort: 'किले के मंदिर',
+      history_cat_city: 'शहर के श्वेतांबर मंदिर',
+      history_cat_digambar: 'दिगंबर जैन मंदिर',
+      history_cat_monuments: 'स्मारक',
+
+      // Temple Details
+      history_fort_t1_name: '1. श्री सात बीस देवरी मंदिर परिसर',
+      history_fort_t1_desc: '27 तीर्थों से घिरा, यह शानदार मंदिर परिसर जैन वास्तुकला की आध्यात्मिक सादगी और समृद्ध अलंकरण का गवाह है।',
+      history_fort_t1_year: '972 ईस्वी (प्रतिष्ठा)',
+      history_fort_t2_name: '2. उत्तरी पार्श्वनाथ मंदिर',
+      history_fort_t2_desc: 'भंडारी श्रेष्ठी वेल्ला द्वारा निर्मित, यह मंदिर अपनी बेहतरीन शिल्प कौशल और महान आचार्यों की मूर्तियों के लिए प्रसिद्ध है।',
+      history_fort_t2_year: '1448 ईस्वी',
+      history_fort_t3_name: '3. दक्षिणी पार्श्वनाथ मंदिर',
+      history_fort_t3_desc: 'तालाशाह और उनके पुत्र कर्मशाह दोशी द्वारा निर्मित, यह मंदिर भक्ति और त्याग का प्रतीक है।',
+      history_fort_t3_year: '1530 ईस्वी',
+      history_fort_t4_name: '4. शांतिनाथ और महावीर स्वामी मंदिर',
+      history_fort_t4_desc: 'रत्नेश्वर झील के पास स्थित, ये मंदिर अपनी प्राचीनता और शांत वातावरण के लिए जाने जाते हैं।',
+      history_fort_t4_year: '1175 - 1444 ईस्वी',
+
+      history_city_t1_name: '4. श्री ऋषभदेव मंदिर (धीमो मंदिर)',
+      history_city_t1_desc: 'किले की तलहटी में स्थित, यह मंदिर "धिग" गोत्र के श्रावकों द्वारा भक्ति के साथ बनाया गया था।',
+      history_city_t1_year: '400 साल पुराना',
+      history_city_t2_name: '5. श्री हरिभद्रसूरी स्मारक मंदिर',
+      history_city_t2_desc: 'महान दार्शनिक आचार्य हरिभद्रसूरी की पावन स्मृति में निर्मित, यह मंदिर ज्ञान और वैराग्य का केंद्र है।',
+      history_city_t2_year: '1973 ईस्वी',
+      history_city_t3_name: '6. चौमुखा पार्श्वनाथ मंदिर',
+      history_city_t3_desc: 'गौमुख कुंड के पास स्थित यह मंदिर अपनी अनूठी पत्थर शिल्प कला और कन्नड़ शिलालेखों के लिए प्रसिद्ध है।',
+      history_city_t3_year: '1491 वि.सं.',
+
+      history_digambar_t1_name: '9. श्री मल्लिनाथ भगवान मंदिर (महावीर प्रसाद)',
+      history_digambar_t1_desc: 'कीर्ति स्तंभ के पास स्थित यह मंदिर दिगंबर परंपरा की प्राचीन महिमा को दर्शाता है।',
+      history_digambar_t1_year: '1428 ईस्वी',
+      history_digambar_t2_name: '11. श्री सुपार्श्वनाथ दिगंबर जैन मंदिर',
+      history_digambar_t2_desc: 'आधुनिक वास्तुकला का यह सुंदर मंदिर दिगंबर जैन समुदाय की धार्मिक गतिविधियों का एक प्रमुख केंद्र है।',
+      history_digambar_t2_year: '2005 ईस्वी',
+
+      history_mon_t1_name: '13. कीर्ति स्तंभ (Tower of Fame)',
+      history_mon_t1_desc: '75 फीट ऊंचा, सात मंजिला यह स्तंभ भगवान आदिनाथ को समर्पित है और जैन वास्तुकला का एक विश्व प्रसिद्ध उदाहरण है।',
+      history_mon_t1_year: '11वीं - 12वीं शताब्दी',
+
+      history_footer_text: 'जैन वास्तुकला के शानदार उदाहरण। यह मुख्य मंदिरों का संक्षिप्त विवरण है। चित्तौड़गढ़ में और भी कई ऐतिहासिक जैन मंदिर हैं जो हमारी समृद्ध विरासत का प्रतिनिधित्व करते हैं।',
     },
   };
 
