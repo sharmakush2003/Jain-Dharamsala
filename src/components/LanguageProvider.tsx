@@ -181,6 +181,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       cal_timing_navkarsi: 'Navkarsi: 8:00 AM - 9:30 AM',
       cal_timing_special: 'Special Rasoi',
       cal_view_details: 'View Sacred Details',
+      nav_guides: 'Guides',
+      guides_title: 'Downloadable Guides & Maps',
+      guides_subtitle: 'Carry the heritage with you. Download our high-quality PDF guides for your pilgrimage.',
+      guide_heritage_trail: 'Jain Heritage Trail Map',
+      guide_dharamsala: 'Dharamsala & Pilgrimage Guide',
+      guide_download_en: 'Download (English)',
+      guide_download_hi: 'Download (Hindi)',
+      footer_guides: 'Guides & Maps',
       
       // History Page
       history_title: 'History and Glorious Heritage',
@@ -429,6 +437,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       cal_timing_navkarsi: 'नवकारसी: प्रातः 8:00 - 9:30',
       cal_timing_special: 'विशेष रसोई',
       cal_view_details: 'पवित्र विवरण देखें',
+      nav_guides: 'गाइड',
+      guides_title: 'डाउनलोड करने योग्य गाइड और मानचित्र',
+      guides_subtitle: 'विरासत को अपने साथ ले जाएं। अपनी तीर्थयात्रा के लिए हमारे उच्च गुणवत्ता वाले पीडीएफ गाइड डाउनलोड करें।',
+      guide_heritage_trail: 'जैन हेरिटेज ट्रेल मानचित्र',
+      guide_dharamsala: 'धर्मशाला और तीर्थयात्रा गाइड',
+      guide_download_en: 'डाउनलोड (अंग्रेजी)',
+      guide_download_hi: 'डाउनलोड (हिंदी)',
+      footer_guides: 'गाइड और मानचित्र',
 
       // History Page
       history_title: 'इतिहास और गौरवशाली विरासत',
