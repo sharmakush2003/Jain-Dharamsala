@@ -152,26 +152,53 @@
   box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
 }
 
+.logoutBtn {
+  background: #ef4444;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--transition-sacred);
+  border: none;
+}
+
+.logoutBtn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
 /* Hamburger Menu Styles */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  transition: all 0.3s ease;
+  gap: 6px;
+}
+
+.scrolled .hamburger {
+  background: rgba(128, 0, 0, 0.05);
+  border-color: rgba(128, 0, 0, 0.1);
 }
 
 .hamburger span {
-  width: 100%;
-  height: 3px;
+  width: 24px;
+  height: 2px;
   background-color: white;
   border-radius: 10px;
-  transition: all 0.3s linear;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scrolled .hamburger span {
@@ -179,20 +206,21 @@
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translateX(10px);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (max-width: 992px) {
   .navbar {
-    padding: 0 30px;
+    padding: 0 20px;
   }
   
   .desktopActions {
@@ -207,18 +235,17 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 100%; /* Full width for more premium feel */
     height: 100vh;
-    background: var(--sacred-glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, #fff 0%, #fdf6ec 100%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    gap: 25px;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 1000;
+    padding: 80px 40px;
+    overflow-y: auto;
   }
   
   .links.menuOpen {
@@ -226,9 +253,27 @@
   }
   
   .link {
-    font-size: 1.5rem;
-    color: var(--temple-maroon) !important;
+    font-size: 1.2rem;
+    color: var(--text-dark) !important;
     text-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .link:hover {
+    color: var(--temple-maroon) !important;
+    background: rgba(128, 0, 0, 0.02);
+    letter-spacing: 3px;
+  }
+
+  .link:last-of-type {
+    border-bottom: none;
   }
   
   .mobileOnly {
@@ -237,20 +282,22 @@
     align-items: center;
     gap: 20px;
     width: 100%;
-    padding: 0 40px;
+    margin-top: 20px;
   }
   
   .mobileOnly .langBtn,
   .mobileOnly .bookBtn {
     width: 100%;
     text-align: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    border-radius: 12px;
   }
 
   .mobileOnly .langBtn {
     background: var(--temple-marble);
-    border-color: var(--sacred-border);
+    border: 1px solid var(--sacred-border);
     color: var(--temple-maroon);
-    padding: 12px 0;
   }
 }
 

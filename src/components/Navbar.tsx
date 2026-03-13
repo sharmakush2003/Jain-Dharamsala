@@ -5,11 +5,13 @@ import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 import { useLanguage } from './LanguageProvider';
+import { useAuth } from './AuthContext';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { isAdmin, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,18 +33,21 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/home" className={styles.logo}>
           <span className={styles.logoText}>{t('site_name')}</span>
           <span className={styles.logoSubtext}>{t('site_sub')}</span>
         </Link>
         <div className={`${styles.links} ${menuOpen ? styles.menuOpen : ''}`}>
-          <Link href="/" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link>
+          <Link href="/home" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link>
           <Link href="/about" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link>
           <Link href="/temple" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_temple')}</Link>
           <Link href="/trust-committee" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_trust')}</Link>
           <Link href="/contact" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link>
-          <Link href="/#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
-          <Link href="/#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
+          <Link href="/home#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
+          <Link href="/home#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
+          {!isAdmin && (
+            <Link href="/" className={styles.link} onClick={() => setMenuOpen(false)}>Admin</Link>
+          )}
           
           <div className={styles.mobileOnly}>
             <button className={styles.langBtn} onClick={toggleLanguage}>
@@ -57,6 +62,14 @@ const Navbar = () => {
             {language === 'en' ? 'हिन्दी' : 'English'}
           </button>
           <Link href="#booking" className={styles.bookBtn}>{t('nav_book')}</Link>
+          {isAdmin && (
+            <>
+              <Link href="/admin" className={styles.langBtn} style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>Dashboard</Link>
+              <button className={styles.logoutBtn} onClick={logout}>
+                Logout
+              </button>
+            </>
+          )}
         </div>
 
         <button 

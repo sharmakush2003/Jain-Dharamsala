@@ -1,88 +1,76 @@
 'use client';
 
-import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import { useLanguage } from '@/components/LanguageProvider';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/components/AuthContext';
 import styles from './page.module.css';
 
-export default function Home() {
-  const { t } = useLanguage();
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
+  const { login } = useAuth();
+
+  const handleGuestEntry = () => {
+    router.push('/home');
+  };
+
+  const handleAdminLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (login(password)) {
+      router.push('/admin');
+    } else {
+      setError('Invalid admin password');
+    }
+  };
 
   return (
-    <main className={styles.main}>
-      <Navbar />
-      <Hero />
-      
-      <section id="amenities" className={`${styles.section} ${styles.bgAlt}`}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <span className={styles.badge}>{t('nav_amenities')}</span>
-            <h2>{t('amenities_title')}</h2>
-          </div>
-          
-          <div className={styles.amenitiesGrid}>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>🛏️</div>
-              <span>{t('amenity_rooms')}</span>
-            </div>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>❄️</div>
-              <span>{t('amenity_ac')}</span>
-            </div>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>🚿</div>
-              <span>{t('amenity_water')}</span>
-            </div>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>🍽️</div>
-              <span>{t('amenity_dining')}</span>
-            </div>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>📶</div>
-              <span>{t('amenity_wifi')}</span>
-            </div>
-            <div className={styles.amenity}>
-              <div className={styles.icon}>🚗</div>
-              <span>{t('amenity_parking')}</span>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className={styles.welcomeContainer}>
+      <div className={styles.card}>
+        <div className={styles.logo}>🏯</div>
+        <h1 className={styles.title}>Jain Dharamsala</h1>
+        <p className={styles.subtitle}>
+          Welcome to heart of peaceful staying. Experience serenity and Jain hospitality at its finest.
+        </p>
 
-      <footer className={styles.forcedFooter}>
-        <div className={styles.container}>
-          <div className={styles.footerGrid}>
-            <div className={styles.footerInfo}>
-              <h3 className={styles.forcedFooterLogo}>{t('site_name')}</h3>
-              <p className={styles.forcedFooterInfo}>{t('footer_address')}</p>
-            </div>
-            <div className={styles.forcedFooterLinks}>
-              <h4>{t('footer_links')}</h4>
-              <ul>
-                <li><Link href="/about">{t('about_title')}</Link></li>
-                <li><Link href="/trust-committee">{t('nav_trust')}</Link></li>
-                <li><Link href="/contact">{t('nav_contact')}</Link></li>
-                <li><Link href="/#rooms">{t('nav_rooms')}</Link></li>
-                <li><Link href="/#booking">{t('nav_book')}</Link></li>
-              </ul>
-            </div>
-            <div className={styles.forcedFooterContact}>
-              <h4>{t('footer_contact')}</h4>
-              <p>Email: info@jaindharamsala.com</p>
-              <p>Phone: +91 98765 43210</p>
-            </div>
+        {!showAdminLogin ? (
+          <div className={styles.buttonGroup}>
+            <button onClick={handleGuestEntry} className={styles.primaryButton}>
+              Explore as Guest
+            </button>
+            <button 
+              onClick={() => setShowAdminLogin(true)} 
+              className={styles.adminToggle}
+            >
+              Admin Portal
+            </button>
           </div>
-          <div className={styles.footerBottom}>
-            <p className={styles.forcedCopyright}>&copy; 2026 {t('footer_copyright')}</p>
-            <div className={styles.forcedCredit}>
-              {t('made_with')} <span className={styles.heart}>❤️</span> {t('by')} 
-              <span className={styles.names}> Kush Sharma</span> & 
-              <span className={styles.names}> Lav Sharma</span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
+        ) : (
+          <form onSubmit={handleAdminLogin} className={styles.authForm}>
+            <input
+              type="password"
+              placeholder="Enter Admin Password"
+              className={styles.inputField}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoFocus
+              required
+            />
+            {error && <p className={styles.error}>{error}</p>}
+            <button type="submit" className={styles.loginButton}>
+              Login as Admin
+            </button>
+            <button 
+              type="button" 
+              onClick={() => setShowAdminLogin(false)} 
+              className={styles.adminToggle}
+              style={{ marginTop: '1rem', width: '100%' }}
+            >
+              Back
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }
