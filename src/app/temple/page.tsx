@@ -4,6 +4,7 @@ import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import Timeline from '@/components/Timeline';
 import DharmicCalendar from '@/components/DharmicCalendar';
+import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
 const TemplePage = () => {
@@ -118,6 +119,7 @@ const TemplePage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

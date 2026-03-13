@@ -36,11 +36,22 @@ export default function WelcomePage() {
 
         {!showAdminLogin ? (
           <div className={styles.buttonGroup}>
-            <button onClick={handleGuestEntry} className={styles.primaryButton}>
+            <button 
+              type="button"
+              onClick={() => {
+                console.log('Guest entry clicked');
+                handleGuestEntry();
+              }} 
+              className={styles.primaryButton}
+            >
               Explore as Guest
             </button>
             <button 
-              onClick={() => setShowAdminLogin(true)} 
+              type="button"
+              onClick={() => {
+                console.log('Admin Portal clicked');
+                setShowAdminLogin(true);
+              }} 
               className={styles.adminToggle}
             >
               Admin Portal

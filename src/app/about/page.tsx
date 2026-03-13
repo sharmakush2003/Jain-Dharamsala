@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
 import Timeline from '@/components/Timeline';
+import Footer from '@/components/Footer';
 import styles from './about.module.css';
 
 const AboutPage = () => {
@@ -78,6 +79,7 @@ const AboutPage = () => {
            <Link href="/">{t('nav_home')}</Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

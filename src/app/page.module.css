@@ -21,6 +21,7 @@
   bottom: 0;
   background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
   z-index: 1;
+  pointer-events: none; /* Ensure it doesn't block clicks */
 }
 
 .card {
@@ -90,6 +91,8 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .primaryButton:hover {
@@ -109,6 +112,8 @@
   cursor: pointer;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
 }
 
 .adminToggle:hover {

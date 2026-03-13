@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
 import styles from './contact.module.css';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 const ContactPage = () => {
   const { t } = useLanguage();
@@ -86,6 +87,7 @@ const ContactPage = () => {
           <Link href="/">{t('nav_home')}</Link>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

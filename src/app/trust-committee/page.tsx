@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
 import styles from './trust.module.css';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 const TrustCommitteePage = () => {
   const { t } = useLanguage();
@@ -78,6 +79,7 @@ const TrustCommitteePage = () => {
           <Link href="/">{t('nav_home')}</Link>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
