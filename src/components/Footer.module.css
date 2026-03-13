@@ -19,11 +19,37 @@
   margin-bottom: 60px;
 }
 
+.footerLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footerLogoImage {
+  border-radius: 5px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.footerLogoTexts {
+  display: flex;
+  flex-direction: column;
+}
+
 .footerLogo {
   color: #D4AF37;
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 2px;
   font-family: 'Playfair Display', serif;
+  line-height: 1.1;
+}
+
+.footerSublogo {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.6;
 }
 
 .footerAddress {

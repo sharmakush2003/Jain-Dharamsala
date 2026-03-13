@@ -29,17 +29,40 @@
 
 .logo {
   display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoImage {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: var(--transition-sacred);
+}
+
+.scrolled .logoImage {
+  height: 40px;
+}
+
+.logoTexts {
+  display: flex;
   flex-direction: column;
 }
 
 .logoText {
   color: white;
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   display: block;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .scrolled .logoText {
@@ -48,11 +71,11 @@
 }
 
 .logoSubtext {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FFD700; /* Brighter gold for better visibility on dark hero */
-  margin-top: 4px;
+  color: #FFD700;
+  margin-top: 2px;
 }
 
 .scrolled .logoSubtext {

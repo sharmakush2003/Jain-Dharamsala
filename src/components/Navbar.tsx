@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 import { useLanguage } from './LanguageProvider';
@@ -34,8 +35,19 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/home" className={styles.logo}>
-          <span className={styles.logoText}>{t('site_name')}</span>
-          <span className={styles.logoSubtext}>{t('site_sub')}</span>
+          <div className={styles.logoWrapper}>
+            <Image 
+              src="/logo.png" 
+              alt="Jain Logo" 
+              width={50} 
+              height={50} 
+              className={styles.logoImage}
+            />
+            <div className={styles.logoTexts}>
+              <span className={styles.logoText}>{t('site_name')}</span>
+              <span className={styles.logoSubtext}>{t('site_sub')}</span>
+            </div>
+          </div>
         </Link>
         <div className={`${styles.links} ${menuOpen ? styles.menuOpen : ''}`}>
           <Link href="/home" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from './LanguageProvider';
 import styles from './Footer.module.css';
 
@@ -13,7 +14,19 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.footerGrid}>
           <div className={styles.footerInfo}>
-            <h3 className={styles.footerLogo}>{t('site_name')}</h3>
+            <div className={styles.footerLogoContainer}>
+              <Image 
+                src="/logo.png" 
+                alt="Jain Logo" 
+                width={60} 
+                height={60} 
+                className={styles.footerLogoImage}
+              />
+              <div className={styles.footerLogoTexts}>
+                <h3 className={styles.footerLogo}>{t('site_name')}</h3>
+                <p className={styles.footerSublogo}>{t('site_sub')}</p>
+              </div>
+            </div>
             <p className={styles.footerAddress}>{t('footer_address')}</p>
           </div>
           
