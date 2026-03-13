@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link href="/temple" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_temple')}</Link>
           <Link href="/trust-committee" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_trust')}</Link>
           <Link href="/contact" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link>
-          <a href="https://chittorgarh-tourism-five.vercel.app/" className={styles.link} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>{t('nav_tourism')}</a>
+          <a href="https://chittorgarh-tourism-five.vercel.app/" className={styles.link} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>{t('nav_tourism')} <span style={{ fontSize: '0.8em', opacity: 0.7 }}>↗</span></a>
           <Link href="/home#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
           <Link href="/home#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
           {!isAdmin && (
@@ -54,27 +54,12 @@ const Navbar = () => {
             <button className={styles.langBtn} onClick={toggleLanguage}>
               {language === 'en' ? 'हिन्दी' : 'English'}
             </button>
-            <button 
-              className={styles.bookBtn} 
-              onClick={() => {
-                setMenuOpen(false);
-                window.open("https://docs.google.com/forms/d/e/1FAIpQLSf0p5e1NgFpVRO_L4PMKqeAMX_YITJswhoWSN4E-vh4YvE7dA/viewform?usp=publish-editor", '_blank', 'noopener,noreferrer');
-              }}
-            >
-              {t('nav_book')}
-            </button>
           </div>
         </div>
 
         <div className={styles.desktopActions}>
           <button className={styles.langBtn} onClick={toggleLanguage}>
             {language === 'en' ? 'हिन्दी' : 'English'}
-          </button>
-          <button 
-            className={styles.bookBtn} 
-            onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSf0p5e1NgFpVRO_L4PMKqeAMX_YITJswhoWSN4E-vh4YvE7dA/viewform?usp=publish-editor", '_blank', 'noopener,noreferrer')}
-          >
-            {t('nav_book')}
           </button>
           {isAdmin && (
             <>
