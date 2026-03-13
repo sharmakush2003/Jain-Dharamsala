@@ -25,6 +25,7 @@ const Dashboard = () => {
           <div className={styles.navItem}>🛏️ Rooms</div>
           <div className={styles.navItem}>📅 Bookings</div>
           <div className={styles.navItem}>💰 Revenue</div>
+          <div className={styles.navItem} onClick={() => document.getElementById('workspace')?.scrollIntoView({ behavior: 'smooth' })}>📂 Workspace</div>
           <div className={styles.navItem}>⚙️ Settings</div>
         </nav>
         <button onClick={handleLogout} className={styles.logoutBtn}>
@@ -53,6 +54,47 @@ const Dashboard = () => {
             <div className={styles.statLabel}>Revenue (INR)</div>
             <div className={styles.statValue}>₹452,000</div>
             <div className={`${styles.statTrend} ${styles.trendUp}`}>↑ 8% this month</div>
+          </div>
+        </section>
+
+        <section id="workspace" style={{ marginBottom: '3rem' }}>
+          <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem', fontWeight: 600 }}>Google Workspace Integration</h2>
+          <div className={styles.workspaceGrid}>
+            <a 
+              href="https://docs.google.com/spreadsheets/d/1V87BexFSW_NfzkjyT3Gozc6LFe12qTSd61iDY1ewYHM/edit?resourcekey=&gid=1302886654#gid=1302886654" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.workspaceCard}
+            >
+              <div className={styles.workspaceIcon}>📊</div>
+              <div className={styles.workspaceTitle}>Booking Excel Sheet</div>
+              <p className={styles.workspaceDesc}>View and manage all booking data in real-time via Google Sheets.</p>
+              <div className={styles.actionIcon}>↗</div>
+            </a>
+
+            <a 
+              href="https://docs.google.com/forms/d/19grqwFLN_Z016WGPZ2MHM65R--XSWOt6vv5kEvrq6ik/edit#responses" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.workspaceCard}
+            >
+              <div className={styles.workspaceIcon}>📝</div>
+              <div className={styles.workspaceTitle}>Response Summary</div>
+              <p className={styles.workspaceDesc}>Analyze booking trends and guest feedback summaries.</p>
+              <div className={styles.actionIcon}>↗</div>
+            </a>
+
+            <a 
+              href="https://docs.google.com/forms/d/19grqwFLN_Z016WGPZ2MHM65R--XSWOt6vv5kEvrq6ik/edit" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.workspaceCard}
+            >
+              <div className={styles.workspaceIcon}>🛠️</div>
+              <div className={styles.workspaceTitle}>Edit Booking Form</div>
+              <p className={styles.workspaceDesc}>Modify form fields, questions, and booking requirements.</p>
+              <div className={styles.actionIcon}>↗</div>
+            </a>
           </div>
         </section>
 

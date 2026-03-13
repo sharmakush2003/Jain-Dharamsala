@@ -53,7 +53,15 @@ const Navbar = () => {
             <button className={styles.langBtn} onClick={toggleLanguage}>
               {language === 'en' ? 'हिन्दी' : 'English'}
             </button>
-            <Link href="#booking" className={styles.bookBtn} onClick={() => setMenuOpen(false)}>{t('nav_book')}</Link>
+            <button 
+              className={styles.bookBtn} 
+              onClick={() => {
+                setMenuOpen(false);
+                window.open("https://docs.google.com/forms/d/e/1FAIpQLSf0p5e1NgFpVRO_L4PMKqeAMX_YITJswhoWSN4E-vh4YvE7dA/viewform?usp=publish-editor", '_blank', 'noopener,noreferrer');
+              }}
+            >
+              {t('nav_book')}
+            </button>
           </div>
         </div>
 
@@ -61,7 +69,12 @@ const Navbar = () => {
           <button className={styles.langBtn} onClick={toggleLanguage}>
             {language === 'en' ? 'हिन्दी' : 'English'}
           </button>
-          <Link href="#booking" className={styles.bookBtn}>{t('nav_book')}</Link>
+          <button 
+            className={styles.bookBtn} 
+            onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSf0p5e1NgFpVRO_L4PMKqeAMX_YITJswhoWSN4E-vh4YvE7dA/viewform?usp=publish-editor", '_blank', 'noopener,noreferrer')}
+          >
+            {t('nav_book')}
+          </button>
           {isAdmin && (
             <>
               <Link href="/admin" className={styles.langBtn} style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>Dashboard</Link>

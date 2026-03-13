@@ -14,21 +14,8 @@ const BookingWidget = () => {
   };
 
   const handleBooking = () => {
-    const bookingId = Math.random().toString(36).substr(2, 9).toUpperCase();
-    const data = {
-      id: bookingId,
-      name: "Guest " + Math.floor(Math.random() * 1000),
-      checkIn: (document.querySelector('input[type="date"]:first-child') as HTMLInputElement)?.value || "2026-03-12",
-      checkOut: (document.querySelectorAll('input[type="date"]')[1] as HTMLInputElement)?.value || "2026-03-13",
-      guests: (document.querySelector('select') as HTMLSelectElement)?.value || "1 Person",
-      rooms: "1 Standard Room",
-      totalAmount: (1200 + selectedServices.length * 200).toString(),
-      services: selectedServices.length > 0 ? selectedServices : ["Accommodation only"]
-    };
-
-    console.log("Mock Booking Data:", data);
-    setIsBooked(true);
-    setTimeout(() => setIsBooked(false), 5000);
+    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf0p5e1NgFpVRO_L4PMKqeAMX_YITJswhoWSN4E-vh4YvE7dA/viewform?usp=publish-editor";
+    window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
