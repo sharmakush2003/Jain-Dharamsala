@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import styles from './page.module.css';
@@ -68,12 +69,19 @@ const HistoryPage = () => {
             
             <div className={styles.timelineItems}>
               {timelineItems.map((item, idx) => (
-                <div key={idx} className={styles.timelineItem}>
+                <motion.div 
+                  key={idx} 
+                  className={styles.timelineItem}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                >
                   <div className={styles.timelineDot}></div>
                   <span className={styles.year}>{item.year}</span>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -92,11 +100,18 @@ const HistoryPage = () => {
             </div>
             <div className={styles.templeGrid}>
               {fortTemples.map((temple, idx) => (
-                <div key={idx} className={styles.card}>
+                <motion.div 
+                  key={idx} 
+                  className={styles.card}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
                   <span className={styles.cardBadge}>{temple.badge}</span>
                   <h3>{temple.name}</h3>
                   <p>{temple.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -109,11 +124,18 @@ const HistoryPage = () => {
             </div>
             <div className={styles.templeGrid}>
               {cityTemples.map((temple, idx) => (
-                <div key={idx} className={styles.card}>
+                <motion.div 
+                  key={idx} 
+                  className={styles.card}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
                   <span className={styles.cardBadge}>{temple.badge}</span>
                   <h3>{temple.name}</h3>
                   <p>{temple.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -126,11 +148,18 @@ const HistoryPage = () => {
             </div>
             <div className={styles.templeGrid}>
               {digambarTemples.map((temple, idx) => (
-                <div key={idx} className={styles.card}>
+                <motion.div 
+                  key={idx} 
+                  className={styles.card}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
                   <span className={styles.cardBadge}>{temple.badge}</span>
                   <h3>{temple.name}</h3>
                   <p>{temple.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -143,11 +172,18 @@ const HistoryPage = () => {
             </div>
             <div className={styles.templeGrid}>
               {monuments.map((temple, idx) => (
-                <div key={idx} className={styles.card}>
+                <motion.div 
+                  key={idx} 
+                  className={styles.card}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
                   <span className={styles.cardBadge}>{temple.badge}</span>
                   <h3>{temple.name}</h3>
                   <p>{temple.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
