@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/LanguageProvider';
 import styles from './trust.module.css';
 import Link from 'next/link';
@@ -31,24 +32,34 @@ const TrustCommitteePage = () => {
     <main className={styles.page}>
       <Navbar forceDark={true} />
       
-      <div className={styles.hero}>
+      <motion.div 
+        className={styles.hero}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h1 className="fade-in">{t('trust_title')}</h1>
-      </div>
+      </motion.div>
 
       <div className={styles.container}>
         <div className={styles.bearersSection}>
-          <div className={styles.bearerCard}>
-            <span className={styles.role}>{t('trust_president')}</span>
-            <h3 className={styles.name}>{t('trust_dr_al_jain')}</h3>
-          </div>
-          <div className={styles.bearerCard}>
-            <span className={styles.role}>{t('trust_secretary')}</span>
-            <h3 className={styles.name}>{t('trust_rakesh_jain')}</h3>
-          </div>
-          <div className={styles.bearerCard}>
-            <span className={styles.role}>{t('trust_treasurer')}</span>
-            <h3 className={styles.name}>{t('trust_kanhaiyalal')}</h3>
-          </div>
+          {[
+            { role: t('trust_president'), name: t('trust_dr_al_jain') },
+            { role: t('trust_secretary'), name: t('trust_rakesh_jain') },
+            { role: t('trust_treasurer'), name: t('trust_kanhaiyalal') },
+          ].map((bearer, idx) => (
+            <motion.div 
+              key={idx} 
+              className={styles.bearerCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <span className={styles.role}>{bearer.role}</span>
+              <h3 className={styles.name}>{bearer.name}</h3>
+            </motion.div>
+          ))}
         </div>
 
         <div className={styles.membersSection}>
@@ -64,11 +75,17 @@ const TrustCommitteePage = () => {
               </thead>
               <tbody>
                 {members.map((member, index) => (
-                  <tr key={index}>
+                  <motion.tr 
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
                     <td>{index + 1}</td>
                     <td>{member.name}</td>
                     <td>{member.city}</td>
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>

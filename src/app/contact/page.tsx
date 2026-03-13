@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
 import styles from './contact.module.css';
@@ -14,22 +15,33 @@ const ContactPage = () => {
     <main className={styles.main}>
       <Navbar forceDark={true} />
       
-      <div className={styles.hero}>
+      <motion.div 
+        className={styles.hero}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className={styles.heroContent}>
           <h1 className="fade-in">{t('contact_title')}</h1>
           <p className="fade-in" style={{ animationDelay: '0.2s' }}>{t('contact_greeting')}</p>
         </div>
-      </div>
+      </motion.div>
 
       <div className={styles.container}>
         {/* Warning Section */}
-        <section className={`${styles.warningBox} fade-in`} style={{ animationDelay: '0.3s' }}>
+        <motion.section 
+          className={`${styles.warningBox}`}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.warningIcon}>⚠️</div>
           <div className={styles.warningContent}>
             <h3>{t('contact_warning_title')}</h3>
             <p>{t('contact_warning_text')}</p>
           </div>
-        </section>
+        </motion.section>
 
         <div className={styles.grid}>
           {/* Contact Details Column */}
@@ -40,30 +52,28 @@ const ContactPage = () => {
             </section>
 
             <div className={styles.contactCards}>
-              <div className={styles.contactCard}>
-                <div className={styles.cardIcon}>📞</div>
-                <div className={styles.cardText}>
-                  <h4>{t('contact_phone_primary')}</h4>
-                  <a href="tel:+919664309708">+91 9664309708</a>
-                  <a href="tel:01472291971">01472-291971</a>
-                </div>
-              </div>
-
-              <div className={styles.contactCard}>
-                <div className={styles.cardIcon}>👤</div>
-                <div className={styles.cardText}>
-                  <h4>{t('contact_rajendra')}</h4>
-                  <a href="tel:+919664309708">+91 9664309708</a>
-                </div>
-              </div>
-              
-              <div className={styles.contactCard}>
-                <div className={styles.cardIcon}>📍</div>
-                <div className={styles.cardText}>
-                  <h4>{t('footer_address')}</h4>
-                  <p>Saat Bees Deori, Chittorgarh Fort, Rajasthan - 312001</p>
-                </div>
-              </div>
+              {[
+                { icon: '📞', title: t('contact_phone_primary'), links: ['+91 9664309708', '01472-291971'], type: 'tel' },
+                { icon: '👤', title: t('contact_rajendra'), links: ['+91 9664309708'], type: 'tel' },
+                { icon: '📍', title: t('footer_address'), text: 'Saat Bees Deori, Chittorgarh Fort, Rajasthan - 312001' }
+              ].map((card, idx) => (
+                <motion.div 
+                  key={idx} 
+                  className={styles.contactCard}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <div className={styles.cardIcon}>{card.icon}</div>
+                  <div className={styles.cardText}>
+                    <h4>{card.title}</h4>
+                    {card.links ? card.links.map((link, lIdx) => (
+                      <a key={lIdx} href={`${card.type}:${link.replace(/\s/g, '')}`}>{link}</a>
+                    )) : <p>{card.text}</p>}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
 

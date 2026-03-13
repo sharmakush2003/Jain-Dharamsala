@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -43,18 +44,29 @@ const AboutPage = () => {
   return (
     <div className={styles.page}>
       <Navbar />
-      <div className={styles.hero}>
+      <motion.div 
+        className={styles.hero}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className={styles.heroOverlay}>
           <h1>{current.title}</h1>
         </div>
-      </div>
+      </motion.div>
       
       <div className={styles.container}>
-        <div className={styles.contactCard}>
+        <motion.div 
+          className={styles.contactCard}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p>📞 {current.phoneLabel} {current.phone}</p>
           <p>🏠 {current.facilities}</p>
           <p className={styles.note}>ℹ️ {current.note}</p>
-        </div>
+        </motion.div>
 
         <section className={styles.historySection}>
           <div className={styles.sectionHeader}>
@@ -64,7 +76,13 @@ const AboutPage = () => {
           <Timeline />
         </section>
 
-        <section className={styles.bhojanshalaSection}>
+        <motion.section 
+          className={styles.bhojanshalaSection}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <div className={styles.sectionHeader}>
             <span className={styles.badge}>{current.bhojanshala.title}</span>
             <h2 className={styles.sectionTitle}>{current.bhojanshala.title}</h2>
@@ -73,7 +91,7 @@ const AboutPage = () => {
             <p className={styles.bhojanText}>{current.bhojanshala.para1}</p>
             <p className={styles.bhojanText}>{current.bhojanshala.para2}</p>
           </div>
-        </section>
+        </motion.section>
 
         <div className={styles.backHome}>
            <Link href="/">{t('nav_home')}</Link>

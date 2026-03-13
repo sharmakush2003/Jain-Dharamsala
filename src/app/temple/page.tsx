@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/LanguageProvider';
 import Navbar from '@/components/Navbar';
 import Timeline from '@/components/Timeline';
@@ -18,7 +19,13 @@ const TemplePage = () => {
       <section className={styles.splitSection}>
         <div className={styles.container}>
           <div className={styles.splitWrapper}>
-            <div className={styles.videoSide}>
+            <motion.div 
+              className={styles.videoSide}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <video 
                 autoPlay 
                 muted 
@@ -30,8 +37,14 @@ const TemplePage = () => {
               >
                 <source src="/temple-video.mp4" type="video/mp4" />
               </video>
-            </div>
-            <div className={styles.contentSide}>
+            </motion.div>
+            <motion.div 
+              className={styles.contentSide}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <div className={styles.heritageBrief}>
                 <h1 className={styles.mainTitle}>{t('temple_new_heritage_title')}</h1>
                 <div className={styles.accentLine}></div>
@@ -60,7 +73,7 @@ const TemplePage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -75,77 +88,32 @@ const TemplePage = () => {
           </div>
           
           <div className={styles.heritageGrid}>
-            {/* Card 1 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/images/temple/heritage.png" alt={t('temple_sec1_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec1_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec1_title')}</h3>
-                <p>{t('temple_sec1_text')}</p>
-              </div>
-            </div>
-            
-            {/* Card 2 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/images/temple/arch.png" alt={t('temple_sec2_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec2_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec2_title')}</h3>
-                <p>{t('temple_sec2_text')}</p>
-              </div>
-            </div>
-            
-            {/* Card 3 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/temple-jali.png" alt={t('temple_sec3_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec3_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec3_title')}</h3>
-                <p>{t('temple_sec3_text')}</p>
-              </div>
-            </div>
-            
-            {/* Card 4 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/temple-nakshatra.png" alt={t('temple_sec4_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec4_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec4_title')}</h3>
-                <p>{t('temple_sec4_text')}</p>
-              </div>
-            </div>
-            
-            {/* Card 5 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/images/temple/hero.png" alt={t('temple_sec5_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec5_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec5_title')}</h3>
-                <p>{t('temple_sec5_text')}</p>
-              </div>
-            </div>
-            
-            {/* Card 6 */}
-            <div className={styles.heritageCard}>
-              <div className={styles.cardImageWrapper}>
-                <img src="/welcome-bg.png" alt={t('temple_sec6_title')} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{t('temple_sec6_badge')}</span>
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{t('temple_sec6_title')}</h3>
-                <p>{t('temple_sec6_text')}</p>
-              </div>
-            </div>
+            {[
+              { img: "/images/temple/heritage.png", title: t('temple_sec1_title'), text: t('temple_sec1_text'), badge: t('temple_sec1_badge') },
+              { img: "/images/temple/arch.png", title: t('temple_sec2_title'), text: t('temple_sec2_text'), badge: t('temple_sec2_badge') },
+              { img: "/temple-jali.png", title: t('temple_sec3_title'), text: t('temple_sec3_text'), badge: t('temple_sec3_badge') },
+              { img: "/temple-nakshatra.png", title: t('temple_sec4_title'), text: t('temple_sec4_text'), badge: t('temple_sec4_badge') },
+              { img: "/images/temple/hero.png", title: t('temple_sec5_title'), text: t('temple_sec5_text'), badge: t('temple_sec5_badge') },
+              { img: "/welcome-bg.png", title: t('temple_sec6_title'), text: t('temple_sec6_text'), badge: t('temple_sec6_badge') },
+            ].map((section, idx) => (
+              <motion.div 
+                key={idx} 
+                className={styles.heritageCard}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+              >
+                <div className={styles.cardImageWrapper}>
+                  <img src={section.img} alt={section.title} className={styles.cardImage} />
+                  <span className={styles.cardBadge}>{section.badge}</span>
+                </div>
+                <div className={styles.cardContent}>
+                  <h3>{section.title}</h3>
+                  <p>{section.text}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
