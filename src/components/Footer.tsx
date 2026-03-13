@@ -59,8 +59,8 @@ const Footer = () => {
           <p className={styles.copyright}>&copy; 2026 {t('footer_copyright')}</p>
           <div className={styles.credit}>
             {t('made_with')} <span className={styles.heart}>❤️</span> {t('by')} 
-            <span className={styles.names}> Kush Sharma</span> & 
-            <span className={styles.names}> Lav Sharma</span>
+            <a href="mailto:kushsharma.cor@gmail.com" className={styles.names}> Kush Sharma</a> & 
+            <a href="mailto:lavsharma.cor@gmail.com" className={styles.names}> Lav Sharma</a>
           </div>
         </div>
       </div>
