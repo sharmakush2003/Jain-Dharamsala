@@ -44,7 +44,7 @@ const HistoryPage = () => {
 
   return (
     <main className={styles.main}>
-      <Navbar />
+      <Navbar forceDark={true} />
       {/* Hero Header */}
       <section className={styles.heroSection}>
         <div className={styles.container}>

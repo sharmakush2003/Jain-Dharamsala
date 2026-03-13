@@ -8,7 +8,11 @@ import styles from './Navbar.module.css';
 import { useLanguage } from './LanguageProvider';
 import { useAuth } from './AuthContext';
 
-const Navbar = () => {
+interface NavbarProps {
+  forceDark?: boolean;
+}
+
+const Navbar = ({ forceDark = false }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -32,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.navbar} ${(scrolled || forceDark) ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/home" className={styles.logo}>
           <div className={styles.logoWrapper}>

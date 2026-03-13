@@ -29,7 +29,7 @@ const TrustCommitteePage = () => {
 
   return (
     <main className={styles.page}>
-      <Navbar />
+      <Navbar forceDark={true} />
       
       <div className={styles.hero}>
         <h1 className="fade-in">{t('trust_title')}</h1>

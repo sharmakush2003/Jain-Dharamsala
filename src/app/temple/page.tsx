@@ -13,7 +13,7 @@ const TemplePage = () => {
 
   return (
     <main className={styles.main}>
-      <Navbar />
+      <Navbar forceDark={true} />
       {/* Top Section: Split Layout (Centered Container) */}
       <section className={styles.splitSection}>
         <div className={styles.container}>

@@ -11,8 +11,8 @@ const ContactPage = () => {
   const { t } = useLanguage();
 
   return (
-    <main className={styles.page}>
-      <Navbar />
+    <main className={styles.main}>
+      <Navbar forceDark={true} />
       
       <div className={styles.hero}>
         <div className={styles.heroContent}>
