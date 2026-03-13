@@ -24,6 +24,7 @@ const Footer = () => {
               <li><Link href="/about">{t('about_title')}</Link></li>
               <li><Link href="/trust-committee">{t('nav_trust')}</Link></li>
               <li><Link href="/contact">{t('nav_contact')}</Link></li>
+              <li><a href="https://chittorgarh-tourism-five.vercel.app/" target="_blank" rel="noopener noreferrer">{t('footer_tourism')}</a></li>
             </ul>
           </div>
           

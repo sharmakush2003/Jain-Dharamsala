@@ -43,6 +43,7 @@ const Navbar = () => {
           <Link href="/temple" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_temple')}</Link>
           <Link href="/trust-committee" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_trust')}</Link>
           <Link href="/contact" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link>
+          <a href="https://chittorgarh-tourism-five.vercel.app/" className={styles.link} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>{t('nav_tourism')}</a>
           <Link href="/home#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
           <Link href="/home#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
           {!isAdmin && (
