@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/AuthContext';
 import styles from './page.module.css';
 
+export default function WelcomePage() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
