@@ -57,7 +57,9 @@ const Footer = () => {
         </div>
         
         <div className={styles.footerBottom}>
-          <p className={styles.copyright}>&copy; 2026 {t('footer_copyright')}</p>
+          <p className={styles.credit} style={{ opacity: 0.9, fontSize: '0.95rem' }}>
+            &copy; 2026 {t('footer_copyright')} <span style={{ margin: '0 8px', opacity: 0.4 }}>|</span> <span className={styles.names}>Under The Developers</span>
+          </p>
           <div className={styles.credit}>
             {t('made_with')} <span className={styles.heart}>❤️</span> {t('by')} 
             <a href="mailto:kushsharma.cor@gmail.com" className={styles.names}> Kush Sharma</a> & 
