@@ -14,6 +14,7 @@
 .hero {
   position: relative;
   height: 50vh;
+  padding-top: 80px; /* Clearance for fixed Navbar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +68,7 @@
 
 .section {
   max-width: 1200px;
-  margin: -3rem auto 0;
+  margin: -1.5rem auto 0; /* Reduced from -3rem for more space */
   padding: 0 1.5rem;
   position: relative;
   z-index: 10;
@@ -278,7 +279,7 @@
   
   .section {
     margin-top: 0;
-    padding-top: 2rem;
+    padding-top: 3rem; /* Increased from 2rem */
   }
 
   .categoryHeader h2 {
