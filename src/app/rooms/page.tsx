@@ -2,9 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './page.module.css';
-
+import Navbar from '@/components/Navbar';
 import { useLanguage } from '@/components/LanguageProvider';
 
 const RoomsPage = () => {
@@ -80,6 +79,7 @@ const RoomsPage = () => {
 
   return (
     <div className={styles.roomsContainer}>
+      <Navbar forceDark />
       <header className={styles.hero}>
         <Image 
           src="/images/IMG-20260313-WA0045.jpg" 

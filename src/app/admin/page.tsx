@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '@/components/AuthContext';
 import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
 import Dashboard from './Dashboard';
 
 export default function AdminPage() {
@@ -24,5 +25,10 @@ export default function AdminPage() {
     );
   }
 
-  return <Dashboard />;
+  return (
+    <>
+      <Navbar forceDark />
+      <Dashboard />
+    </>
+  );
 }
