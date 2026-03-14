@@ -2,7 +2,7 @@
   display: flex;
   height: 100vh;
   background: #0a0a0b;
-  color: #e4e4e7;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
 
@@ -35,7 +35,7 @@
   gap: 1rem;
   padding: 1rem;
   border-radius: 0.75rem;
-  color: #a1a1aa;
+  color: #d1d1d6;
   cursor: pointer;
   transition: all 0.2s;
   margin-bottom: 0.5rem;
@@ -74,7 +74,7 @@
 }
 
 .statLabel {
-  color: #a1a1aa;
+  color: #d1d1d6;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
 }
@@ -144,7 +144,7 @@
 
 .workspaceDesc {
   font-size: 0.875rem;
-  color: #a1a1aa;
+  color: #d1d1d6;
   line-height: 1.6;
 }
 
@@ -167,10 +167,10 @@
 
 .table th {
   text-align: left;
-  color: #a1a1aa;
-  font-weight: 500;
+  color: #ffffff;
+  font-weight: 600;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .table td {
@@ -206,20 +206,74 @@
   color: #fff;
 }
 
+.headerSubtitle {
+  color: #d1d1d6;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.headerActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bookRoomBtn {
+  background: linear-gradient(135deg, #eab308 0%, #d4af37 100%);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.bookRoomBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(234, 179, 8, 0.2);
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  /* Custom scrollbar for better aesthetics */
+}
+
+.tableWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
 @media (max-width: 1024px) {
   .adminContainer {
     flex-direction: column;
+    height: auto;
   }
 
   .sidebar {
     width: 100%;
-    height: auto;
-    padding: 1.5rem;
+    padding: 1.25rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #111113;
   }
 
   .logoArea {
@@ -227,33 +281,84 @@
   }
 
   .navMenu {
-    display: none; /* Hide full menu on mobile for simplicity, or use a dropdown */
+    display: none;
   }
 
   .logoutBtn {
     margin-top: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 
   .mainContent {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .tableWrapper {
+    margin: 1rem -1.25rem;
+    padding: 0 1.25rem;
+    width: calc(100% + 2.5rem);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 800px; /* Ensure table doesn't squash */
+  }
+
+  .table th, .table td {
+    padding: 1.25rem 1rem;
+    white-space: nowrap; /* Prevent text from stacking */
   }
 
   .statsGrid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .dashboardGrid {
     grid-template-columns: 1fr;
-  }
-
-  .header h1 {
-    font-size: 1.5rem;
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 600px) {
-  .table th:nth-child(2), .table td:nth-child(2) {
-    display: none; /* Hide Room Type on very small screens */
+@media (max-width: 640px) {
+  .headerActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bookRoomBtn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .userBadge {
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1.75rem;
+  }
+
+  .dataCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.25rem;
   }
 }

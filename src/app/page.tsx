@@ -9,6 +9,7 @@ export default function WelcomePage() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [selectedRole, setSelectedRole] = useState<any>('super');
   const router = useRouter();
   const { login } = useAuth();
 
@@ -18,7 +19,7 @@ export default function WelcomePage() {
 
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (login(password)) {
+    if (login(password, selectedRole)) {
       router.push('/admin');
     } else {
       setError('Invalid admin password');
@@ -59,6 +60,17 @@ export default function WelcomePage() {
           </div>
         ) : (
           <form onSubmit={handleAdminLogin} className={styles.authForm}>
+            <select 
+              className={styles.inputField} 
+              value={selectedRole} 
+              onChange={(e) => setSelectedRole(e.target.value)}
+              style={{ marginBottom: '1rem', appearance: 'auto' }}
+            >
+              <option value="super">Super Admin</option>
+              <option value="counter1">Counter Admin 1</option>
+              <option value="counter2">Counter Admin 2</option>
+              <option value="counter3">Counter Admin 3</option>
+            </select>
             <input
               type="password"
               placeholder="Enter Admin Password"
