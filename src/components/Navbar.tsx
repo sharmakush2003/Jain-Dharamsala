@@ -62,7 +62,7 @@ const Navbar = ({ forceDark = false }: NavbarProps) => {
           <Link href="/trust-committee" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_trust')}</Link>
           <Link href="/contact" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link>
           <a href="https://chittorgarh-tourism-five.vercel.app/" className={styles.link} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>{t('nav_tourism')} <span style={{ fontSize: '0.8em', opacity: 0.7 }}>↗</span></a>
-          <Link href="/home#rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
+          <Link href="/rooms" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link>
           <Link href="/home#amenities" className={styles.link} onClick={() => setMenuOpen(false)}>{t('nav_amenities')}</Link>
           {!isAdmin && (
             <Link href="/" className={styles.link} onClick={() => setMenuOpen(false)}>Admin Login</Link>

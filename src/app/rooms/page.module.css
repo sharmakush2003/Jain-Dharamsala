@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+.roomsContainer {
+  min-height: 100vh;
+  background-color: #0c0c0e;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  padding-bottom: 5rem;
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(12, 12, 14, 0.4) 0%, rgba(12, 12, 14, 0.9) 100%);
+  z-index: 1;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff 0%, #eab308 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #d1d1d6;
+  font-weight: 400;
+}
+
+.section {
+  max-width: 1200px;
+  margin: -4rem auto 0;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.categoryGroup {
+  margin-bottom: 4rem;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.categoryHeader h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #eab308;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.5) 0%, transparent 100%);
+}
+
+.roomsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.roomCard {
+  background: #18181b;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.roomCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(234, 179, 8, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.roomImageContainer {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.roomImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.roomCard:hover .roomImage {
+  transform: scale(1.1);
+}
+
+.roomPrice {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(12, 12, 14, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #eab308;
+  font-weight: 600;
+}
+
+.roomContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.roomContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.roomFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.featureTag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: #d1d1d6;
+}
+
+.roomDesc {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.roomFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.roomStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.totalBadge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  width: fit-content;
+}
+
+.roomCount {
+  font-size: 0.9rem;
+  color: #71717a;
+}
+
+.bookBtn {
+  background: linear-gradient(135deg, #eab308 0%, #d4af37 100%);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.bookBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .roomsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    margin-top: -2rem;
+  }
+}
+
+.disclaimerSection {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.disclaimerSection p {
+  color: #71717a;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.6;
+}
