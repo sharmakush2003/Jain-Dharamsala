@@ -264,19 +264,36 @@
 
 @media (max-width: 768px) {
   .hero {
-    height: 40vh;
+    height: 45vh;
   }
   
+  .heroContent {
+    padding-top: 2rem;
+  }
+
   .roomsGrid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .section {
-    margin-top: -2rem;
+    margin-top: 0;
+    padding-top: 2rem;
   }
 
   .categoryHeader h2 {
     font-size: 1.8rem;
+  }
+
+  .roomFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .bookBtn {
+    text-align: center;
+    width: 100%;
   }
 }
 
